@@ -37,8 +37,7 @@ class RestaurantAgent:
             response = model.generate_content(prompt)
             return response.text
         except Exception as e:
-            reply_text = "Assalamualaikum! Aapka message mil gaya. Kuch der baad try kijiye, Gemini API ka daily limit khatam ho gaya hai."
-            return reply_text
+            return f"Restaurant agent error: {str(e)}"
 
 class WeatherAgent:
     def process(self, message):
@@ -53,8 +52,7 @@ class WeatherAgent:
             response = model.generate_content(prompt)
             return response.text
         except Exception as e:
-            reply_text = "Assalamualaikum! Aapka message mil gaya. Kuch der baad try kijiye, Gemini API ka daily limit khatam ho gaya hai."
-            return reply_text
+            return f"Weather agent error: {str(e)}"
 
 class GeneralAgent:
     def process(self, message):
@@ -69,8 +67,7 @@ class GeneralAgent:
             response = model.generate_content(prompt)
             return response.text
         except Exception as e:
-            reply_text = "Assalamualaikum! Aapka message mil gaya. Kuch der baad try kijiye, Gemini API ka daily limit khatam ho gaya hai."
-            return reply_text
+            return f"General agent error: {str(e)}"
 
 # Agent Router
 def get_agent(message):
